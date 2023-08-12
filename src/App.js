@@ -1,28 +1,22 @@
 import "./App.css";
 import SideBar from "./components/Sidebar/SideBar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./pages/Call_report.css";
 
-import Dashboard from "./pages/Dashboard";
-import Users from "./pages/Users";
-import Messages from "./pages/Messages";
-import FileManager from "./pages/FileManager";
-import Analytics from "./pages/Analytics";
-import Order from "./pages/Order";
-import Saved from "./pages/Saved";
-import Setting from "./pages/Setting";
+import Call_report from "./pages/Call_report";
+import Call_typewise from "./pages/Call_typewise";
+import Miss_call from "./pages/Miss_call";
+import Userwise_call from "./pages/Userwise_call";
+
 function App() {
   return (
     <Router>
       <SideBar>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/messages" element={<Messages />} />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/file-manager" element={<FileManager />} />
-          <Route path="/order" element={<Order />} />
-          <Route path="/saved" element={<Saved />} />
-          <Route path="/settings" element={<Setting />} />
+          <Route path="/Call_report" element={<Call_report />} />
+          <Route path="/Call_typewise" element={<Call_typewise />} />
+          <Route path="/Miss_call" element={<Miss_call />} />
+          <Route path="/Userwise_call" element={<Userwise_call />} />
 
           <Route path="*" element={<> not found</>} />
         </Routes>

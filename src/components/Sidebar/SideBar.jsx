@@ -1,90 +1,38 @@
 import { NavLink } from "react-router-dom";
-import { FaBars, FaHome, FaLock, FaMoneyBill, FaUser } from "react-icons/fa";
-import { MdMessage } from "react-icons/md";
-import { BiAnalyse, BiSearch } from "react-icons/bi";
+import { FaBars, FaFilm, FaHome, FaLock, FaMoneyBill, FaPlane, FaPray, FaPrayingHands, FaRedRiver, FaUser } from "react-icons/fa";
+import { MdAnnouncement, MdCatchingPokemon, MdContactPage, MdEvent, MdFeedback, MdFunctions, MdManageAccounts, MdMessage, MdMicExternalOn, MdPinDrop, MdSpeaker, MdSpeakerPhone, MdVolunteerActivism } from "react-icons/md";
+import { BiAnalyse, BiCheckboxChecked, BiMicrophone, BiNews, BiPhotoAlbum, BiSearch } from "react-icons/bi";
 import { BiCog } from "react-icons/bi";
-import { AiFillHeart, AiTwotoneFileExclamation } from "react-icons/ai";
-import { BsCartCheck } from "react-icons/bs";
+import { AiFillAlert, AiFillHeart, AiTwotoneFileExclamation } from "react-icons/ai";
+import { BsCartCheck, BsCheck, BsFilm, BsPeople, BsSpeaker, BsTree } from "react-icons/bs";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
+
 const routes = [
   {
-    path: "/",
-    name: "Dashboard",
+    path: "/Call_report",
+    name: "Call report",
     icon: <FaHome />,
   },
+
   {
-    path: "/users",
-    name: "Users",
-    icon: <FaUser />,
+    path: "/Call_typewise",
+    name: "Call typewise report",
+    icon: <MdFeedback />,
   },
   {
-    path: "/messages",
-    name: "Messages",
-    icon: <MdMessage />,
+    path: "/Miss_call",
+    name: "Miss call report",
+    icon: <BiNews />,
   },
   {
-    path: "/analytics",
-    name: "Analytics",
-    icon: <BiAnalyse />,
-  },
-  {
-    path: "/file-manager",
-    name: "File Manager",
-    icon: <AiTwotoneFileExclamation />,
-    subRoutes: [
-      {
-        path: "/settings/profile",
-        name: "Profile ",
-        icon: <FaUser />,
-      },
-      {
-        path: "/settings/2fa",
-        name: "2FA",
-        icon: <FaLock />,
-      },
-      {
-        path: "/settings/billing",
-        name: "Billing",
-        icon: <FaMoneyBill />,
-      },
-    ],
-  },
-  {
-    path: "/order",
-    name: "Order",
-    icon: <BsCartCheck />,
-  },
-  {
-    path: "/settings",
-    name: "Settings",
-    icon: <BiCog />,
-    exact: true,
-    subRoutes: [
-      {
-        path: "/settings/profile",
-        name: "Profile ",
-        icon: <FaUser />,
-      },
-      {
-        path: "/settings/2fa",
-        name: "2FA",
-        icon: <FaLock />,
-      },
-      {
-        path: "/settings/billing",
-        name: "Billing",
-        icon: <FaMoneyBill />,
-      },
-    ],
-  },
-  {
-    path: "/saved",
-    name: "Saved",
-    icon: <AiFillHeart />,
-  },
-];
+    path: "/Userwise_call",
+    name: "Userwise call report",
+    icon: <BiMicrophone />,
+  }
+
+]
 
 const SideBar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -128,7 +76,7 @@ const SideBar = ({ children }) => {
       <div className="main-container">
         <motion.div
           animate={{
-            width: isOpen ? "200px" : "45px",
+            width: isOpen ? "260px" : "50px",
 
             transition: {
               duration: 0.5,
@@ -148,7 +96,7 @@ const SideBar = ({ children }) => {
                   exit="hidden"
                   className="logo"
                 >
-                  DoSomeCoding
+                  Call Center
                 </motion.h1>
               )}
             </AnimatePresence>
