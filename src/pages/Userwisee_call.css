@@ -1,0 +1,86 @@
+.container {
+    padding: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    
+  }
+  
+  th {
+    background-color: #1f5180;
+    font-weight: bold;
+   
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  thead th {
+    text-align: center;
+    
+  }
+  
+  .table-heading {
+    text-align: center;
+    background-color: #0d5da7;
+    padding: 20px;
+    color: white;
+  }
+  
+  .table-filter {
+    background-color: white;
+    width: 42%;
+    height: 30px;
+    border-color: white;
+    align-self: start;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #555;
+    outline: none;
+  }
+  
+  .drop {
+    margin-bottom: 20px;
+    
+  }
+  
+  .table-heading label {
+    margin-right: 10px; 
+    font-size: 18px; 
+    font-weight: bold; 
+    background-color: white;
+    
+  }
+  
+  .drop th {
+    background-color: white;
+    border: none;
+    
+  }
+  
+  .drop td {
+    border: none;
+    background-color: white;
+    text-align: right;
+    
+  }
+  
+  .drop span {
+    cursor: pointer;
+    background-color: white;
+    text-align: left;
+    
+  }
+  
