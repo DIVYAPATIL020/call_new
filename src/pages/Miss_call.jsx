@@ -56,19 +56,7 @@ const Miss_call = () => {
         Missed Call Report &nbsp;
         
       </th>
-        <td>
-          <button
-            onClick={handleButtonClick}
-            style={{
-              width: "100px",
-              height: "25px",
-              cursor: "pointer",
-              backgroundColor: "skyblue",
-            }}
-          >
-            GO
-          </button>
-        </td>
+        
         {/* <td style={{ textAlign: 'left'}}>
                 <span onClick={handlePrint}>Print</span>
               </td> */}
