@@ -8,16 +8,43 @@ const Button = ({ onClick }) => (
 const Call_typewise = () => {
     const handleButtonClick = () => {
         console.log("Print Go");
-    };
+  };
     const handlePrint = () => {
-        const tableToPrint = document.getElementById('typewisedata');
-        if (tableToPrint) {
-          const originalDisplay = tableToPrint.style.display;
-          tableToPrint.style.display = 'table';
-          window.print();
-          tableToPrint.style.display = originalDisplay;
-        }
-      };
+      console.log("Print clicked!");
+      const tableToPrint = document.getElementById("typewisedata");
+      
+      if (tableToPrint) {
+        const newWin = window.open("", "_blank");
+        newWin.document.write(`
+        <html>
+          <head>
+            <title>Print Table</title>
+            <style>
+            
+              table {
+                border-collapse: collapse;
+                width: 100%;
+              }
+              th, td {
+                border: 1px solid black;
+                padding: 8px;
+                text-align: left;
+              }
+            </style>
+          </head>
+          <body>
+            ${tableToPrint.outerHTML}
+          </body>
+        </html>
+      `);
+        newWin.document.close();
+        newWin.print();
+      } else {
+        console.log("Table not found!");
+      }
+    };
+
+
     return <div className="title">
     <br/>
     <table >
