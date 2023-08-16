@@ -14,7 +14,7 @@ const Call_typewise = () => {
       const tableToPrint = document.getElementById("typewisedata");
       
       if (tableToPrint) {
-        const newWin = window.open("", "_blank");
+        const newWin = window.open("",);
         newWin.document.write(`
         <html>
           <head>
@@ -48,7 +48,7 @@ const Call_typewise = () => {
     return <div className="title">
     <br/>
     <table >
-      <tbody ><tr><th style={{position:"absolute", left: '7%', top: "7%",fontWeight:"bold",borderRadius:"4px"}}>
+      <tbody ><tr><th style={{position:"absolute",left: '7%', top: "7%",fontWeight:"bold",borderRadius:"4px"}}>
       Call Type &nbsp;
         <select  style={{cursor:"pointer",padding:"4px",borderRadius:"4px",fontWeight:"normal"}} className="opt" onChange={handleButtonClick}>
           <option value="all">Select Call Type</option>
