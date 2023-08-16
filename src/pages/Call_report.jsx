@@ -1,4 +1,47 @@
 const Call_report = () => {
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+  const handleButtonClick = () => {
+    console.log("GO Button clicked!");
+  };
+
+  const handlePrint = () => {
+    console.log("Print clicked!");
+    const tableToPrint = document.getElementById("emp-table");
+
+    if (tableToPrint) {
+      const newWin = window.open("", "_blank");
+      newWin.document.write(`
+      <html>
+        <head>
+          <title>Print Table</title>
+          <style>
+          
+            table {
+              border-collapse: collapse;
+              width: 100%;
+            }
+            th, td {
+              border: 1px solid black;
+              padding: 8px;
+              text-align: left;
+            }
+          </style>
+        </head>
+        <body>
+          ${tableToPrint.outerHTML}
+        </body>
+      </html>
+    `);
+      newWin.document.close();
+      newWin.print();
+    } else {
+      console.log("Table not found!");
+    }
+  };
+
+
+  
+
   return <div className="title">
     <div className="heading">
 
@@ -6,8 +49,10 @@ const Call_report = () => {
     </div>
     <br />
     {/* <label for="selectOption">Deapartment</label> */}
+
     <table>
-      <tbody><tr><th>
+
+      <tbody ><tr><th >
         Department &nbsp;
         <select className="table-filter" onchange="filter_rows()">
           <option value="all">All</option>
@@ -18,6 +63,36 @@ const Call_report = () => {
           <option value="all">Town Planning</option>
         </select>
       </th>
+        <td>
+          <button
+            onClick={handleButtonClick}
+            style={{
+              width: "100px",
+              height: "25px",
+              cursor: "pointer",
+              backgroundColor: "skyblue",
+            }}
+          >
+            GO
+          </button>
+        </td>
+        {/* <td style={{ textAlign: 'left'}}>
+                <span onClick={handlePrint}>Print</span>
+              </td> */}
+        <td style={{ textAlign: "left" }}>
+          <a
+            href="#"
+            onClick={handlePrint}
+            style={{
+              color: "blue",
+              textDecoration: "underline",
+              cursor: "pointer",
+            }}
+          >
+            Print
+          </a>
+        </td>
+
       </tr></tbody></table>
     <div className="outer-wrapper">
       <div className="table-wrapper">
@@ -75,6 +150,7 @@ const Call_report = () => {
             <td>1:00 pm</td>
           </tr>
           </tbody></table>
+
         {/*  */}
       </div>
     </div>

@@ -8,7 +8,7 @@ const Userwise_call = () => {
   const handlePrint = () => {
     console.log("Print clicked!");
     const tableToPrint = document.getElementById("Userdata");
-    
+
     if (tableToPrint) {
       const newWin = window.open("", "_blank");
       newWin.document.write(`
@@ -91,7 +91,7 @@ const Userwise_call = () => {
             </thead>
           </table>
 
-          <h2 className="table-heading" style={{ margin: 0}}>
+          <h2 className="table-heading" style={{ margin: 0 }}>
             Userwise Call Report
           </h2>
           <table
@@ -107,7 +107,7 @@ const Userwise_call = () => {
                 <th scope="col">Satisfied</th>
                 <th scope="col">Department</th>
                 <th scope="col">User</th>
-                <th scope="col">CAll Date/Time</th>
+                <th scope="col">Call Date/Time</th>
               </tr>
             </thead>
             <tbody>
