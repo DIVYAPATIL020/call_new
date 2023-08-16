@@ -1,59 +1,127 @@
-import React from "react";
-import "../pages/Miss_call.css";
-
-const Button = ({ onClick }) => (
-    <button onClick={onClick}>Print </button>
-  );
-
 const Miss_call = () => {
-    const handleButtonClick = () => {
-        console.log("Print Go");
-    };
-    const handlePrint = () => {
-        const tableToPrint = document.getElementById('typewisedata');
-        if (tableToPrint) {
-          const originalDisplay = tableToPrint.style.display;
-          tableToPrint.style.display = 'table';
-          window.print();
-          tableToPrint.style.display = originalDisplay;
-        }
-      };
-    return <div className="title">
-    <br/>
-    <table >
-      <tbody ><tr><th style={{position:"absolute", left: '7%', top: "7%",fontWeight:"bold",borderRadius:"4px"}}>
-      Missed Call Report &nbsp;
-        
-        
-        </th>
-      
-      <td style={{border:"none",height:"40px"}}><button style={{ position:"absolute",cursor: "pointer",width: "100px",height:"40px", left:"66%",top:"7%"}} id="btn2" onClick={handlePrint}>Print</button></td>
-      </tr></tbody></table>
-    <div className="outer-wrap">
-      <div className="table-wrap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+  const handleButtonClick = () => {
+    console.log("GO Button clicked!");
+  };
 
-        <h3 className="table-heading" style={{ margin: 0}}>
-            Call Report
-          </h3>
-        <table id="typewisedata">
+  const handlePrint = () => {
+    console.log("Print clicked!");
+    const tableToPrint = document.getElementById("emp-table");
+
+    if (tableToPrint) {
+      const newWin = window.open("", "_blank");
+      newWin.document.write(`
+      <html>
+        <head>
+          <title>Print Table</title>
+          <style>
+          
+            table {
+              border-collapse: collapse;
+              width: 100%;
+            }
+            th, td {
+              border: 1px solid black;
+              padding: 8px;
+              text-align: left;
+            }
+          </style>
+        </head>
+        <body>
+          ${tableToPrint.outerHTML}
+        </body>
+      </html>
+    `);
+      newWin.document.close();
+      newWin.print();
+    } else {
+      console.log("Table not found!");
+    }
+  };
+
+
+  
+
+  return <div className="title">
+    <div className="heading">
+
+      {/* <button id="get-unique-values" onclick="getUniqueValuesFromColumn()">Get unique column values</button> */}
+    </div>
+    <br />
+    {/* <label for="selectOption">Deapartment</label> */}
+
+    <table>
+
+      <tbody ><tr><th >
+        Missed Call Report &nbsp;
+        
+      </th>
+        <td>
+          <button
+            onClick={handleButtonClick}
+            style={{
+              width: "100px",
+              height: "25px",
+              cursor: "pointer",
+              backgroundColor: "skyblue",
+            }}
+          >
+            GO
+          </button>
+        </td>
+        {/* <td style={{ textAlign: 'left'}}>
+                <span onClick={handlePrint}>Print</span>
+              </td> */}
+        <td style={{ textAlign: "left" }}>
+          <a
+            href="#"
+            onClick={handlePrint}
+            style={{
+              color: "blue",
+              textDecoration: "underline",
+              cursor: "pointer",
+            }}
+          >
+            Print
+          </a>
+        </td>
+
+      </tr></tbody></table>
+    <div className="outer-wrapper">
+      <div className="table-wrapper">
+        <table id="emp-table">
           <thead>
-            <tr><th>Phone no</th>
-              <th>Call Time</th>
+            <tr><th>
+              Phone No.
+              {/* <select class="table-filter" onchange="filter_rows()">
+                <option value="all">All</option> */}
+            </th>
+              <th>
+                Call Type
+                {/* <select class="table-filter" onchange="filter_rows()">
+                <option value="all">All</option>
+              </select> */}
+              </th>
+              
+              
               
             </tr></thead>
           <tbody><tr>
-            <td>365-374-434</td>
-            <td>14/07/2016 08:46:11</td>
+            <td>9345189654</td>
+            <td>01/07/2016 08:06:11</td>
+            
           </tr>
           <tr>
-            <td>142-434-435</td>
-            <td>01/12/2016 18:46:11</td>
+            <td>9345189654</td>
+            <td>11/17/2016 10:06:12</td>
             
           </tr>
           </tbody></table>
+
+        {/*  */}
       </div>
     </div>
-    </div>;
-  };
-  
-  export default Miss_call; 
+  </div>;
+};
+
+export default Miss_call; 
