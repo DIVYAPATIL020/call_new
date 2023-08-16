@@ -47,20 +47,48 @@ const Call_typewise = () => {
 
     return <div className="title">
     <br/>
-    <table >
-      <tbody ><tr><th style={{position:"absolute",left: '7%', top: "7%",fontWeight:"bold",borderRadius:"4px"}}>
-      Call Type &nbsp;
-        <select  style={{cursor:"pointer",padding:"4px",borderRadius:"4px",fontWeight:"normal"}} className="opt" onChange={handleButtonClick}>
-          <option value="all">Select Call Type</option>
+    <table>
+
+      <tbody ><tr><th >
+        Call Type &nbsp;
+        <select className="table-filter" onchange="filter_rows()">
+          <option value="all">All</option>
           <option value="all">Help</option>
           <option value="all">Suggestion</option>
           <option value="all">Complaint</option>
+          
         </select>
-        </th>
-      <td style={{border:"none"}}>
-        <button style={{ width: "100px",height:"40px" ,cursor: "pointer",position:"absolute",left:"57%",top:"7%"}} className="btn1" onClick={handleButtonClick}>GO</button>
-      </td>
-      <td style={{border:"none",height:"40px"}}><button style={{ position:"absolute",cursor: "pointer",width: "100px",height:"40px", left:"66%",top:"7%"}} id="btn2" onClick={handlePrint}>Print</button></td>
+      </th>
+        <td>
+          <button
+            onClick={handleButtonClick}
+            style={{
+              width: "100px",
+              height: "25px",
+              cursor: "pointer",
+              backgroundColor: "skyblue",
+            }}
+          >
+            GO
+          </button>
+        </td>
+        {/* <td style={{ textAlign: 'left'}}>
+                <span onClick={handlePrint}>Print</span>
+              </td> */}
+        <td style={{ textAlign: "left" }}>
+          <a
+            href="#"
+            onClick={handlePrint}
+            style={{
+              color: "blue",
+              textDecoration: "underline",
+              cursor: "pointer",
+            }}
+          >
+            Print
+          </a>
+        </td>
+
       </tr></tbody></table>
     <div className="outer-wrap">
       <div className="table-wrap">
