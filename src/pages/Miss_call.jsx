@@ -56,9 +56,7 @@ const Miss_call = () => {
         Missed Call Report &nbsp;
         
       </th>
-        <td>
-          
-        </td>
+        
         {/* <td style={{ textAlign: 'left'}}>
                 <span onClick={handlePrint}>Print</span>
               </td> */}
